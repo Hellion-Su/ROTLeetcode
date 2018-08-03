@@ -1,0 +1,15 @@
+def large_cont_sum(arr):
+
+    # must initiat sum and result to be arr[0] because len(arr) maybe 1 or they are all negative
+    
+    if len(arr) == 1:
+        return arr[0]
+    
+    sum = result = arr[0]
+    
+    for i in arr[1::]:
+        sum = max (sum + i, i)
+        result = max (sum, result)
+    return result
+
+large_cont_sum ([1,2,-1,2,3,4,5,-2,1])
