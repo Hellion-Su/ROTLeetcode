@@ -1,45 +1,24 @@
 def balance_check(s):
     
     parat = []
-    square = []
-    curve = []
+
+    k = ""
+    matches = {"(":")","[":"]","{":"}"}
     a = 0
+    if len(s) % 2 != 0:
+        return False
     for i in s:
-        if i == "(":
-            parat.append("(")
-        elif i == ")":
-                if len(parat) == 0 or parat[len(parat)-1] != "(":
-                    return False
-                else:
-                    parat.pop()
-                    
-    a = a + len(parat)
-
-    for i in s:
-        if i == "[":
-            square.append("[")
-        elif i == "]":
-                if len(square) == 0 or square[len(square)-1] != "[":
-                    return False
-                else:
-                    square.pop()
-                    
-    a = a + len(square)
-    
-    for i in s:
-        if i == "{":
-            curve.append("{")
-        elif i == "}":
-                if len(curve) == 0 or curve[len(curve)-1] != "{" :
-                    return False
-                else:
-                    curve.pop()
-                    
-    a = a + len(curve)
-
-        
-
-    return a == 0
-
-balance_check("()[](({[]})){}")
+        if i == "(" or i == "[" or i == "{":
+            parat.append(i)
+        elif len(parat) == 0:
+            return False
+        else:
+            k = parat.pop()
+             
+            if matches[k] != i:
+                return False
             
+    
+    return len(parat) == 0
+
+balance_check("{([{}])")
