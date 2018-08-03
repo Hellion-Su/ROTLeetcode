@@ -1,0 +1,12 @@
+def rev_word(s):
+    
+    rev = []
+    length = len(s)
+    count = 1
+    while count <= length:
+        rev.append(s[length - count])
+        count += 1
+        
+    return "".join(rev)
+
+rev_word("you are sb")
