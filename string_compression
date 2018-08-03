@@ -1,0 +1,19 @@
+import collections
+def compress(s):
+
+    a = collections.defaultdict(int)
+    s2 = ""
+    
+        # always check bound condition
+    if len(s) == 0:
+        return ""
+    else:
+        for i in s:
+            a[i] += 1
+        for i in a:
+            s2 += i
+            s2 += str(a[i])
+        
+    return s2
+
+compress("a")
