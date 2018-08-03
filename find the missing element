@@ -1,0 +1,17 @@
+import collections
+def finder(ary1, ary2):
+    
+    mix = ary1 + ary2
+    count = 1
+    # initial a dict which a[i] = 0
+    # details : https://stackoverflow.com/questions/5900578/how-does-collections-defaultdict-work
+    a = collections.defaultdict(int)
+    
+    for i in mix:
+        a[i] = a[i] + 1
+    for i in a:
+        if a[i] % 2 != 0:
+            return i
+        pass
+    
+finder([1, 2, 3],[1,2])
