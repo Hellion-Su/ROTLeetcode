@@ -1,0 +1,10 @@
+def pair_sum(arr,k):
+    result = {}
+    lookup = set()
+    for num in arr:
+        if k-num in lookup:
+            result[min(num, k)] = max(num ,k)
+        else:
+            lookup.add(num)
+    return len(result)
+    pass
