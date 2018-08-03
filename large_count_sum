@@ -1,0 +1,14 @@
+def large_cont_sum(arr):
+    
+    sum = 0
+    a = 0
+    
+    for i in arr:
+        if i >= 0:
+            sum = sum + i
+        else:
+            a = max (sum, a)
+            sum = 0
+    return a
+
+large_cont_sum ([1,2,-1,2,3,4,5,-2,1])
